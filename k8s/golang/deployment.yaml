@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-hpa
+spec:
+  selector:
+      matchLabels:
+        app: go-hpa
+        tier: go-hpa
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: go-hpa
+        tier: go-hpa
+    spec:
+      containers:
+      - name: go-hpa
+        image: soarescbm/go-hpa
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 50m
+          limits:
+            cpu: 100m
+          
+        ports:
+          - containerPort: 80

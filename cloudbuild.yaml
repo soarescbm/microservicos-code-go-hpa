@@ -1,0 +1,25 @@
+
+#desafio CI - Install, Test, Push...
+steps:
+
+- id: 'Install appserver'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['install', 'app']
+#  args: ['install', '.']
+  env: ['GOPATH=.']
+#  env: ['PROJECT_ROOT=soma']
+
+
+- id: 'Test Server'
+  name: 'gcr.io/cloud-builders/go'
+  args: ['test', '-v','app']
+  env: ['GOPATH=.']
+#  env: ['PROJECT_ROOT=soma']
+
+
+- id: 'Build imagem server e push'
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/goserver', '.']
+
+images: ['gcr.io/$PROJECT_ID/goserver']
+
