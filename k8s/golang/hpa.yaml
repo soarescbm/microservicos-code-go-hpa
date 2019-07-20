@@ -1,13 +1,14 @@
-apiVesion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: go-hpa
-spec: 
-  maxReplicas: 6
-  minReplicas: 1
-  scaleTargetRef: 
-    apiVesion: extensions/v1beta1
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
     kind: Deployment
     name: go-hpa
+  minReplicas: 1
+  maxReplicas: 6
   targetCPUUtilizationPercentage: 15
    

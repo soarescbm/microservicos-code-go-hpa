@@ -24,12 +24,6 @@ soarescbm/go-hpa
 
 ```
 
-  - App golang rodando com o Kubernetes no GCP com hpa:
-
-
-```
-http://35.226.253.217/  
-```
 
 
 
