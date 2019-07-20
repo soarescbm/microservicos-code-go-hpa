@@ -10,7 +10,7 @@ import (
 func greeting(textparam string) string {
 
 	x := 0.001
-	for i := 0; i < 10000000000; i++ {
+	for i := 0; i < 10000000; i++ {
 
 		x += math.Sqrt(x)
 	}
