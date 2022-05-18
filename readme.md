@@ -1,6 +1,6 @@
 
 
-## Microserviços -  Kuberntes e hpa 
+## Microserviços -  Kubernetes e Go
 
 ### 1 - Kubernetes
 
